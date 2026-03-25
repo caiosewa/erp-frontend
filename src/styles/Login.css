@@ -1,0 +1,121 @@
+/* Estilos da Página de Login */
+.loginContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-lg);
+  overflow: hidden;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loginHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.loginTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.loginSubtitle {
+  color: var(--secondary-color);
+  margin-bottom: 0;
+}
+
+.loginForm {
+  width: 100%;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--dark-color);
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.formInputLarge {
+  padding: 1rem;
+  font-size: 1.125rem;
+}
+
+.loginButton {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.loginButton:hover {
+  background: #0b5ed7;
+}
+
+.loginButton:active {
+  transform: translateY(1px);
+}
+
+.loginFooter {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--secondary-color);
+  font-size: 0.875rem;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .loginCard {
+    margin: 0 1rem;
+  }
+  
+  .loginTitle {
+    font-size: 1.75rem;
+  }
+}

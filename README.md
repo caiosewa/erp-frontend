@@ -1,70 +1,158 @@
-# Getting Started with Create React App
+# ERP Frontend - Sistema Profissional
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Estrutura de Pastas
 
-## Available Scripts
+```
+src/
+├── styles/                 # Arquivos CSS organizados
+│   ├── global.css          # Estilos globais e variáveis
+│   ├── Login.css           # Estilos específicos da página de login
+│   ├── Layout.css          # Estilos do layout principal
+│   ├── Dashboard.css       # Estilos do dashboard
+│   ├── Pages.css           # Estilos para páginas de listagem
+│   └── Components.css     # Estilos para componentes reutilizáveis
+├── components/            # Componentes reutilizáveis
+│   ├── Layout.js          # Layout principal com header e sidebar
+│   ├── Button.js          # Botão customizável
+│   ├── Card.js            # Card genérico
+│   ├── Table.js           # Tabela responsiva
+│   └── StatusBadge.js     # Badge de status
+├── pages/                # Páginas da aplicação
+│   ├── Login.js           # Página de login
+│   ├── Dashboard.js        # Dashboard principal
+│   ├── Vendas.js         # Página de vendas
+│   ├── Clientes.js        # Página de clientes
+│   ├── Produtos.js        # Página de produtos
+│   ├── Pedidos.js         # Página de pedidos
+│   ├── Relatorios.js      # Página de relatórios
+│   └── Configuracoes.js   # Página de configurações
+├── services/             # Serviços de API
+│   └── authService.js     # Serviço de autenticação
+└── App.js               # Componente principal com rotas
+```
 
-In the project directory, you can run:
+## Sistema de Estilos
+
+### CSS Modular
+- **global.css**: Variáveis CSS, estilos globais e utilitários
+- **Componentes específicos**: Cada página/componente tem seu próprio CSS
+- **Design System**: Cores, espaçamentos e bordas padronizadas
+
+### Variáveis CSS
+```css
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+}
+```
+
+## Componentes Reutilizáveis
+
+### Button
+```javascript
+<Button 
+  variant="primary" 
+  size="large" 
+  icon="➕"
+  onClick={handleClick}
+>
+  Novo Item
+</Button>
+```
+
+### Card
+```javascript
+<Card 
+  title="Título" 
+  subtitle="Descrição"
+  actions={<Button>Ação</Button>}
+>
+  Conteúdo do card
+</Card>
+```
+
+### Table
+```javascript
+<Table 
+  headers={['ID', 'Nome', 'Status']}
+  data={tableData}
+  actions={(row, index) => (
+    <Button size="small" icon="👁️" />
+  )}
+/>
+```
+
+### StatusBadge
+```javascript
+<StatusBadge 
+  status="Ativo" 
+  type="success"
+  size="medium"
+/>
+```
+
+## Responsividade
+
+- **Mobile-first**: Design otimizado para dispositivos móveis
+- **Breakpoints**: 768px (tablet), 992px (desktop)
+- **Grid System**: CSS Grid para layouts flexíveis
+- **Sidebar colapsável**: Menu responsivo em dispositivos móveis
+
+## Scripts Disponíveis
 
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Inicia a aplicação em modo de desenvolvimento.
+Abra [http://localhost:3000](http://localhost:3000) para visualizar no navegador.
 
 ### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Inicia o executor de testes em modo interativo.
 
 ### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Compila a aplicação para produção na pasta `build`.
+Otimiza o bundle para melhor performance.
 
 ### `npm run eject`
+**Nota: esta é uma operação de mão única.**
+Remove a dependência de build e copia todos os arquivos de configuração para o projeto.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Fluxo de Desenvolvimento
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Criar componente**: Em `src/components/`
+2. **Adicionar estilos**: Em `src/styles/Components.css`
+3. **Importar estilos**: No componente específico
+4. **Testar responsividade**: Em diferentes tamanhos de tela
+5. **Documentar**: Atualizar este README
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Características Implementadas
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **CSS Modular**: Separação completa de estilos
+- **Componentes Reutilizáveis**: Botões, cards, tabelas
+- **Design System**: Cores e espaçamentos padronizados
+- **Responsividade**: Mobile-first approach
+- **Acessibilidade**: HTML semântico e ARIA labels
+- **Performance**: CSS otimizado e sem redundâncias
+- **Navegação**: Sidebar funcional e responsiva
+- **Temas**: Variáveis CSS para fácil customização
 
-## Learn More
+## Tecnologias Utilizadas
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **React 19**: Framework JavaScript
+- **React Router**: Navegação client-side
+- **CSS3**: Estilos modernos com variáveis
+- **CSS Grid**: Layouts responsivos
+- **JavaScript ES6+**: Sintaxe moderna
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Próximos Passos
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ ] Adicionar testes unitários
+- [ ] Implementar tema dark/light
+- [ ] Otimizar performance
+- [ ] Adicionar animações
+- [ ] Implementar internacionalização
+- [ ] Adicionar documentação de API

@@ -1,0 +1,217 @@
+/* Estilos do Layout Principal */
+.layoutContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.layoutHeader {
+  height: var(--header-height);
+  background: var(--primary-color);
+  color: white;
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.headerContent {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.headerBrand {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.headerBrand:hover {
+  color: white;
+}
+
+.headerToggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  transition: background-color 0.15s ease-in-out;
+}
+
+.headerToggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.headerNav {
+  display: flex;
+  align-items: center;
+}
+
+.userDropdown {
+  position: relative;
+}
+
+.userDropdownToggle {
+  background: none;
+  border: none;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  transition: background-color 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.userDropdownToggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.userDropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-lg);
+  min-width: 200px;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.dropdownItem {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  color: var(--dark-color);
+  text-decoration: none;
+  transition: background-color 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.dropdownItem:hover {
+  background-color: var(--light-color);
+}
+
+.dropdownDivider {
+  height: 1px;
+  background: #e9ecef;
+  margin: 0.5rem 0;
+}
+
+/* Sidebar */
+.layoutContent {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--dark-color);
+  color: white;
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+}
+
+.sidebarCollapsed {
+  transform: translateX(-100%);
+}
+
+.sidebarContent {
+  padding: 1.5rem;
+}
+
+.sidebarTitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #adb5bd;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.sidebarNav {
+  list-style: none;
+}
+
+.sidebarNavItem {
+  margin-bottom: 0.25rem;
+}
+
+.sidebarNavLink {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: white;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: background-color 0.15s ease-in-out;
+}
+
+.sidebarNavLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebarNavLinkActive {
+  background-color: var(--primary-color);
+}
+
+.sidebarNavIcon {
+  margin-right: 0.75rem;
+  font-size: 1rem;
+}
+
+/* Main Content */
+.mainContent {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--light-color);
+}
+
+.mainContentInner {
+  padding: 2rem;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .sidebar {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    height: calc(100vh - var(--header-height));
+    z-index: 999;
+  }
+  
+  .sidebarCollapsed {
+    transform: translateX(-100%);
+  }
+  
+  .sidebarNotCollapsed {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .headerContent {
+    padding: 0 0.75rem;
+  }
+  
+  .mainContentInner {
+    padding: 1rem;
+  }
+}
