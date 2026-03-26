@@ -17,6 +17,21 @@
   --header-height: 60px;
 }
 
+/* Dark Mode Variables */
+[data-bs-theme="dark"] {
+  --primary-color: #0d6efd;
+  --secondary-color: #adb5bd;
+  --success-color: #20c997;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
+  --light-color: #212529;
+  --dark-color: #f8f9fa;
+  --bg-color: #1a1d21;
+  --card-bg: #212529;
+  --border-color: #495057;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -27,6 +42,14 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--light-color);
   color: var(--dark-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Body */
+[data-bs-theme="dark"] body,
+body.dark-mode {
+  background-color: var(--bg-color, #1a1d21);
+  color: var(--dark-color, #f8f9fa);
 }
 
 /* Classes Utilitárias */
@@ -94,4 +117,20 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
+}
+
+/* Dark Mode Scrollbar */
+[data-bs-theme="dark"] ::-webkit-scrollbar-track,
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #2d3238;
+}
+
+[data-bs-theme="dark"] ::-webkit-scrollbar-thumb,
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #495057;
+}
+
+[data-bs-theme="dark"] ::-webkit-scrollbar-thumb:hover,
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: #6c757d;
 }

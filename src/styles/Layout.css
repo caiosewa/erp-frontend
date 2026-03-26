@@ -114,95 +114,178 @@
   margin: 0.5rem 0;
 }
 
+/* Dark Mode - Dropdown */
+[data-bs-theme="dark"] .userDropdownMenu,
+body.dark-mode .userDropdownMenu {
+  background: #2d3238;
+  border-color: #495057;
+}
+
+[data-bs-theme="dark"] .dropdownItem,
+body.dark-mode .dropdownItem {
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .dropdownItem:hover,
+body.dark-mode .dropdownItem:hover {
+  background-color: #495057;
+}
+
+[data-bs-theme="dark"] .dropdownDivider,
+body.dark-mode .dropdownDivider {
+  background: #495057;
+}
+
 /* Sidebar */
 .layoutContent {
-  display: flex;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
   flex: 1;
-  overflow: hidden;
+  min-height: calc(100vh - var(--header-height));
+}
+
+.layoutContent.sidebarCollapsed {
+  grid-template-columns: 0 1fr;
 }
 
 .sidebar {
-  width: var(--sidebar-width);
-  background: var(--dark-color);
-  color: white;
-  transition: transform 0.3s ease-in-out;
+  background: #ffffff;
+  border-right: 1px solid #e9ecef;
   overflow-y: auto;
+  transition: all 0.3s ease-in-out;
 }
 
-.sidebarCollapsed {
-  transform: translateX(-100%);
+.layoutContent.sidebarCollapsed .sidebar {
+  border-right: none;
+  overflow: hidden;
 }
 
 .sidebarContent {
-  padding: 1.5rem;
+  padding: 1rem 0;
 }
 
 .sidebarTitle {
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   text-transform: uppercase;
-  color: #adb5bd;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  color: #6c757d;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0 1.25rem 0.75rem;
+  padding: 0;
 }
 
 .sidebarNav {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .sidebarNavItem {
-  margin-bottom: 0.25rem;
+  margin: 0;
+  padding: 0;
 }
 
 .sidebarNavLink {
-  display: flex;
-  align-items: center;
-  padding: 0.75rem 1rem;
-  color: white;
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  color: #495057;
+  background: transparent;
+  border: none;
+  border-left: 3px solid transparent;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-align: left;
   text-decoration: none;
-  border-radius: var(--border-radius);
-  transition: background-color 0.15s ease-in-out;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  line-height: 1.5;
 }
 
 .sidebarNavLink:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #f8f9fa;
+  color: #212529;
 }
 
 .sidebarNavLinkActive {
-  background-color: var(--primary-color);
+  background-color: #e7f3ff;
+  color: #0d6efd;
+  border-left-color: #0d6efd;
+  font-weight: 600;
 }
 
-.sidebarNavIcon {
-  margin-right: 0.75rem;
-  font-size: 1rem;
+/* Dark Mode - Sidebar */
+[data-bs-theme="dark"] .sidebar,
+body.dark-mode .sidebar {
+  background: #212529;
+  border-right-color: #495057;
+}
+
+[data-bs-theme="dark"] .sidebarTitle,
+body.dark-mode .sidebarTitle {
+  color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .sidebarNavLink,
+body.dark-mode .sidebarNavLink {
+  color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .sidebarNavLink:hover,
+body.dark-mode .sidebarNavLink:hover {
+  background-color: #495057;
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .sidebarNavLinkActive,
+body.dark-mode .sidebarNavLinkActive {
+  background-color: #0d6efd;
+  color: white;
+  border-left-color: #0d6efd;
 }
 
 /* Main Content */
 .mainContent {
   flex: 1;
   overflow-y: auto;
-  background: var(--light-color);
+  background: #f8f9fa;
+  min-width: 0;
+}
+
+/* Dark Mode - Main Content */
+[data-bs-theme="dark"] .mainContent,
+body.dark-mode .mainContent {
+  background: #1a1d21;
 }
 
 .mainContentInner {
-  padding: 2rem;
+  padding: 1.5rem 2rem;
+  min-height: 100%;
 }
 
 /* Responsividade */
 @media (max-width: 992px) {
+  .layoutContent {
+    display: flex;
+    grid-template-columns: none;
+  }
+  
+  .layoutContent.sidebarCollapsed {
+    grid-template-columns: none;
+  }
+  
   .sidebar {
     position: fixed;
     top: var(--header-height);
     left: 0;
     height: calc(100vh - var(--header-height));
     z-index: 999;
+    transition: transform 0.3s ease-in-out;
+    width: var(--sidebar-width);
   }
   
-  .sidebarCollapsed {
+  .layoutContent.sidebarCollapsed .sidebar {
     transform: translateX(-100%);
-  }
-  
-  .sidebarNotCollapsed {
-    transform: translateX(0);
   }
 }
 

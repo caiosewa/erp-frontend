@@ -24,48 +24,14 @@ export default function Layout({ children }) {
   };
 
   const menuItems = [
-    {
-      path: "/dashboard",
-      label: "Dashboard",
-      icon: "⚡",
-      active: location.pathname === "/dashboard"
-    },
-    {
-      path: "/vendas",
-      label: "Vendas",
-      icon: "🛒",
-      active: location.pathname === "/vendas"
-    },
-    {
-      path: "/clientes",
-      label: "Clientes",
-      icon: "👥",
-      active: location.pathname === "/clientes"
-    },
-    {
-      path: "/produtos",
-      label: "Produtos",
-      icon: "📦",
-      active: location.pathname === "/produtos"
-    },
-    {
-      path: "/pedidos",
-      label: "Pedidos",
-      icon: "📋",
-      active: location.pathname === "/pedidos"
-    },
-    {
-      path: "/relatorios",
-      label: "Relatórios",
-      icon: "📊",
-      active: location.pathname === "/relatorios"
-    },
-    {
-      path: "/configuracoes",
-      label: "Configurações",
-      icon: "⚙️",
-      active: location.pathname === "/configuracoes"
-    }
+    { path: "/dashboard", label: "Dashboard", active: location.pathname === "/dashboard" },
+    { path: "/vendas", label: "Vendas", active: location.pathname === "/vendas" },
+    { path: "/clientes", label: "Clientes", active: location.pathname === "/clientes" },
+    { path: "/produtos", label: "Produtos", active: location.pathname === "/produtos" },
+    { path: "/pedidos", label: "Pedidos", active: location.pathname === "/pedidos" },
+    { path: "/relatorios", label: "Relatórios", active: location.pathname === "/relatorios" },
+    { path: "/admin", label: "Administração", active: location.pathname === "/admin" },
+    { path: "/configuracoes", label: "Configurações", active: location.pathname === "/configuracoes" }
   ];
 
   const handleNavigation = (path) => {
@@ -100,10 +66,10 @@ export default function Layout({ children }) {
               
               {userDropdownOpen && (
                 <div className="userDropdownMenu">
-                  <button className="dropdownItem">
+                  <button className="dropdownItem" onClick={() => { navigate("/perfil"); setUserDropdownOpen(false); }}>
                     👤 Perfil
                   </button>
-                  <button className="dropdownItem">
+                  <button className="dropdownItem" onClick={() => { navigate("/configuracoes"); setUserDropdownOpen(false); }}>
                     ⚙️ Configurações
                   </button>
                   <div className="dropdownDivider"></div>
@@ -119,7 +85,7 @@ export default function Layout({ children }) {
 
       <div className={`layoutContent ${sidebarCollapsed ? 'sidebarCollapsed' : ''}`}>
         {/* Sidebar */}
-        <aside className={`sidebar ${sidebarCollapsed ? 'sidebarCollapsed' : 'sidebarNotCollapsed'}`}>
+        <aside className="sidebar">
           <div className="sidebarContent">
             <h6 className="sidebarTitle">Menu</h6>
             <ul className="sidebarNav">
@@ -129,7 +95,6 @@ export default function Layout({ children }) {
                     className={`sidebarNavLink ${item.active ? 'sidebarNavLinkActive' : ''}`}
                     onClick={() => handleNavigation(item.path)}
                   >
-                    <span className="sidebarNavIcon">{item.icon}</span>
                     {item.label}
                   </button>
                 </li>

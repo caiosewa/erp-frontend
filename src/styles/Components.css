@@ -62,6 +62,28 @@
   margin-right: 0.5rem;
 }
 
+/* Dark Mode - Relatórios */
+[data-bs-theme="dark"] .reportCard,
+body.dark-mode .reportCard {
+  background: #212529;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .reportCard:hover,
+body.dark-mode .reportCard:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+[data-bs-theme="dark"] .reportTitle,
+body.dark-mode .reportTitle {
+  color: #6ea8fe;
+}
+
+[data-bs-theme="dark"] .reportDescription,
+body.dark-mode .reportDescription {
+  color: #adb5bd;
+}
+
 /* Configurações */
 .settingsContainer {
   display: grid;
@@ -75,6 +97,13 @@
   box-shadow: var(--box-shadow);
   overflow: hidden;
   margin-bottom: 1.5rem;
+}
+
+/* Dark Mode - Settings Card */
+[data-bs-theme="dark"] .settingsCard,
+body.dark-mode .settingsCard {
+  background: #212529;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
 }
 
 .settingsCard:last-child {
@@ -182,6 +211,12 @@
   margin-bottom: 0.25rem;
 }
 
+/* Dark Mode - Info Label */
+[data-bs-theme="dark"] .infoLabel,
+body.dark-mode .infoLabel {
+  color: #f8f9fa;
+}
+
 .infoValue {
   color: var(--secondary-color);
   font-size: 0.875rem;
@@ -201,12 +236,30 @@
   box-shadow: var(--box-shadow-lg);
 }
 
+/* Dark Mode - Card */
+[data-bs-theme="dark"] .card,
+body.dark-mode .card {
+  background: #212529;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .card:hover,
+body.dark-mode .card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+}
+
 .cardHeader {
   padding: 1rem 1.5rem;
   border-bottom: 1px solid #e9ecef;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* Dark Mode - Card Header */
+[data-bs-theme="dark"] .cardHeader,
+body.dark-mode .cardHeader {
+  border-bottom-color: #495057;
 }
 
 .cardTitle {
@@ -216,10 +269,22 @@
   margin: 0;
 }
 
+/* Dark Mode - Card Title */
+[data-bs-theme="dark"] .cardTitle,
+body.dark-mode .cardTitle {
+  color: #6ea8fe;
+}
+
 .cardSubtitle {
   font-size: 0.875rem;
   color: var(--secondary-color);
   margin: 0.25rem 0 0 0;
+}
+
+/* Dark Mode - Card Subtitle */
+[data-bs-theme="dark"] .cardSubtitle,
+body.dark-mode .cardSubtitle {
+  color: #adb5bd;
 }
 
 .cardActions {
@@ -272,6 +337,20 @@
   background: transparent;
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
+}
+
+/* Dark Mode - Button Outline */
+[data-bs-theme="dark"] .buttonOutline,
+body.dark-mode .buttonOutline {
+  color: #6ea8fe;
+  border-color: #6ea8fe;
+}
+
+[data-bs-theme="dark"] .buttonOutline:hover,
+body.dark-mode .buttonOutline:hover {
+  background: #0d6efd;
+  color: white;
+  border-color: #0d6efd;
 }
 
 .buttonOutline:hover {

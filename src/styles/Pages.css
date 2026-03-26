@@ -208,3 +208,299 @@
     flex-direction: column;
   }
 }
+
+/* Admin Page - Form Styles */
+.pageContainer {
+  padding: 0;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroupFull {
+  grid-column: 1 / -1;
+}
+
+.formLabel {
+  font-weight: 500;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
+}
+
+.formControl {
+  padding: 0.75rem 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background: white;
+}
+
+.formControl:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+}
+
+.formControl:disabled {
+  background: #e9ecef;
+  cursor: not-allowed;
+}
+
+.formCheck {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.formCheck input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+.formCheckLabel {
+  font-size: 0.9375rem;
+  color: var(--dark-color);
+}
+
+.formActions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .formActions {
+    flex-direction: column;
+  }
+}
+
+/* Settings Page - Toggle Switches */
+.settingsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.settingItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.settingItem:last-child {
+  border-bottom: none;
+}
+
+.settingInfo {
+  flex: 1;
+}
+
+.settingTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  margin: 0 0 0.25rem 0;
+}
+
+.settingDescription {
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+/* Toggle Switch */
+.toggleSwitch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.toggleSwitch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleSlider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 28px;
+  transition: 0.3s;
+}
+
+.toggleSlider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.toggleSwitch input:checked + .toggleSlider {
+  background-color: var(--primary-color);
+}
+
+.toggleSwitch input:checked + .toggleSlider:before {
+  transform: translateX(22px);
+}
+
+/* Form Value (display mode) */
+.formValue {
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  color: var(--dark-color);
+}
+
+/* Dark Mode - Pages */
+[data-bs-theme="dark"] .pageTitle,
+body.dark-mode .pageTitle {
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .pageSubtitle,
+body.dark-mode .pageSubtitle {
+  color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .formLabel,
+body.dark-mode .formLabel {
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .formControl,
+body.dark-mode .formControl {
+  background: #2d3238;
+  border-color: #495057;
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .formControl:focus,
+body.dark-mode .formControl:focus {
+  background: #2d3238;
+  border-color: var(--primary-color);
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .formControl:disabled,
+body.dark-mode .formControl:disabled {
+  background: #495057;
+}
+
+[data-bs-theme="dark"] .formCheckLabel,
+body.dark-mode .formCheckLabel {
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .formValue,
+body.dark-mode .formValue {
+  color: #f8f9fa;
+}
+
+/* Dark Mode - Settings */
+[data-bs-theme="dark"] .settingTitle,
+body.dark-mode .settingTitle {
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .settingDescription,
+body.dark-mode .settingDescription {
+  color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .settingItem,
+body.dark-mode .settingItem {
+  border-bottom-color: #495057;
+}
+
+/* Dark Mode - Table */
+[data-bs-theme="dark"] .tableCard,
+body.dark-mode .tableCard {
+  background: #212529;
+}
+
+[data-bs-theme="dark"] .tableHeader,
+body.dark-mode .tableHeader {
+  border-bottom-color: #495057;
+}
+
+[data-bs-theme="dark"] .tableTitle,
+body.dark-mode .tableTitle {
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .responsiveTable th,
+body.dark-mode .responsiveTable th {
+  background: #2d3238;
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .responsiveTable td,
+body.dark-mode .responsiveTable td {
+  border-bottom-color: #495057;
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .responsiveTable tbody tr:hover,
+body.dark-mode .responsiveTable tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Dark Mode - Status Badges */
+[data-bs-theme="dark"] .statusSuccess,
+body.dark-mode .statusSuccess {
+  background: rgba(25, 135, 84, 0.2);
+}
+
+[data-bs-theme="dark"] .statusWarning,
+body.dark-mode .statusWarning {
+  background: rgba(255, 193, 7, 0.2);
+}
+
+[data-bs-theme="dark"] .statusInfo,
+body.dark-mode .statusInfo {
+  background: rgba(13, 202, 240, 0.2);
+}
+
+[data-bs-theme="dark"] .statusDanger,
+body.dark-mode .statusDanger {
+  background: rgba(220, 53, 69, 0.2);
+}
+
+/* Dark Mode - Empty State */
+[data-bs-theme="dark"] .emptyState,
+body.dark-mode .emptyState {
+  color: #adb5bd;
+}

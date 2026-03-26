@@ -209,3 +209,71 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Dark Mode - Dashboard */
+[data-bs-theme="dark"] .dashboardTitle,
+body.dark-mode .dashboardTitle {
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .dashboardSubtitle,
+body.dark-mode .dashboardSubtitle {
+  color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .statsCard,
+body.dark-mode .statsCard {
+  background: #212529;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .statsCard:hover,
+body.dark-mode .statsCard:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+[data-bs-theme="dark"] .statsValue,
+body.dark-mode .statsValue {
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .contentCard,
+body.dark-mode .contentCard {
+  background: #212529;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .cardHeader,
+body.dark-mode .cardHeader {
+  border-bottom-color: #495057;
+}
+
+[data-bs-theme="dark"] .cardTitle,
+body.dark-mode .cardTitle {
+  color: #6ea8fe;
+}
+
+[data-bs-theme="dark"] .chartContainer,
+body.dark-mode .chartContainer {
+  background: #2d3238;
+}
+
+[data-bs-theme="dark"] .chartPlaceholder,
+body.dark-mode .chartPlaceholder {
+  color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .activityItem,
+body.dark-mode .activityItem {
+  border-bottom-color: #495057;
+}
+
+[data-bs-theme="dark"] .activityText,
+body.dark-mode .activityText {
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .activityTime,
+body.dark-mode .activityTime {
+  color: #adb5bd;
+}
